@@ -1,0 +1,93 @@
+@charset "UTF-8";
+* {margin: 0 auto; padding: 0; color: #333333; list-style-type: none;}
+a {text-decoration: none;}
+
+header {width: 100%; height: 100px; background-color: #00B386;}
+header .con_box {width: 1200px; height: 100px;}
+header .logo {width: 200px; height: 100px; float: left;}
+header nav {width: 1000px; height: 100px; float: left; position: relative;}
+ul.mainmenu {width: 640px; height: 50px; position: absolute; margin-right: 10px; left: 340px; top: 50px; 
+    background-color: #FFAA33; z-index: 100;}
+ul.mainmenu > li {line-height: 50px; width: 160px; float: left; text-align: center; position: relative;}
+ul.mainmenu > li > a {width: 160px; line-height: 50px; display: block; color: #111111;}
+ul.mainmenu > li:hover > a {color: #FFAA33; background-color: #F2F2F2;}
+ul.submenu {height: 0px; z-index: 100; overflow: hidden; transition: height 1s;}
+ul.submenu > li {height: 40px;}
+ul.submenu > li > a {line-height: 40px; display: block; color: #F2F2F2;}
+ul.submenu > li:hover > a {color: #FFAA33; background-color: #F2F2F2;}
+.submenu_bg {background-color: #FFAA33; position: absolute; width: 1200px; height: 0px; z-index: 11; left: -200px; top: 100px; transition: height 1s;}
+
+ul.mainmenu:hover ul.submenu {height: 160px;}
+ul.mainmenu:hover + .submenu_bg {height: 160px;}
+
+section {width: 100%; height: 300px; z-index: 10;}
+section .con_box {width: 1200px; height: 300px; position: relative; overflow: hidden;}
+.sld img {position: absolute; width: 1200px; height: 300px;}
+
+img.sld_1 {
+    animation-name: sld_1;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
+img.sld_2 {animation: sld_2 7s infinite;}
+img.sld_3 {animation: sld_3 7s infinite;}
+
+@keyframes sld_1 {
+    0%          {top: -300px;}
+    33.33%      {top: -300px;}
+    66.66%      {top: 0px;}
+    100%        {top: 300px;}
+}
+@keyframes sld_2 {
+    0%          {top: -300px;}
+    33.33%      {top: 0px;}
+    66.66%      {top: 300px;}
+    100%        {top: 300px;}
+}
+@keyframes sld_3 {
+    0%          {top: 0px;}
+    33.33%      {top: 300px;}
+    66.66%      {top: -300px;}
+    100%        {top: 0px;}
+}
+
+
+article {width: 100%; height: 200px;}
+article .con_box {width: 1200px; height: 200px;}
+article .noti {width: 400px; height: 200px; float: left; background-color: #FFAA33;}
+.noti h3 {font-size: 23px; color: #ffffff; margin: 15px 0px 10px 16px;}
+.noti ul {background-color: #FFAA33;}
+.noti ul li {margin: 0px 0px 0px 20px;}
+.noti ul li a p {color: #333333; float: left; width: 300px; line-height: 30px;}
+.noti ul li a span {color: #333333; float: left;}
+
+article .gall {width: 400px; height: 200px; float: left;  background-color: #FFAA33;}
+.gall h3 {font-size: 23px; color: #ffffff; margin: 15px 0px 10px 16px;}
+.gall li {float: left; text-align: center; margin: 0 15px 0 16px;}
+.gall li a {float: left; color: #333333; font-size: 12pt;}
+.gall img {width: 80px;}
+
+article .link {float: left; width: 400px; height: 200px; background-image: url(../img/link_bg.jpg); background-color: #B2FFCC;}
+.link .link_box {padding: 30px; margin-top: 55px;}
+.link a {font-size: 15px; background-color: #FFAA33; border-radius: 20px; color: #ffffff; padding: 12px; margin-right: 15px;}
+.link a:hover {background-color: #ffffff; color: #FFAA33;}
+
+footer {width: 100%; height: 100px; background-color: #00B386;}
+footer .con_box {width: 1200px; height: 100px;}
+footer .foot1 {float: left; width: 1000px; height: 100px; line-height: 100px; text-align: center; color: #B2FFCC; font-size: 13.5px;}
+footer .foot2 {float: left; width: 200px; height: 100px;}
+footer .foot2_1 {width: 200px; height: 50px;}
+.foot2_1 .sns li a {float: left; margin: 10px; margin-right: 15px; margin-top: 15px;}
+.foot2_1 .sns li a img {width: 30px;}
+footer .foot2_2 {width: 200px; height: 50px;}
+footer .foot2_2 select {margin-left: 10px; width: 143px;}
+
+/*팝업 스타일*/
+#popup_bg {position: fixed; background-color: #B2FFCC90; width: 100%; height: 100%; left: 0; top: 0; z-index: 102;}
+#popup {width: 600px; height: 400px; background-color: #00B386; margin-top: 150px; border-radius: 20px;}
+.phead {line-height: 90px; font-size: 35px; text-align: center; color: #333333;}
+.ptext {text-align: center; font-size: 15px; line-height: 22px; background-color: #ffffff; border-radius: 15px; margin: 0 15px 15px 15px; padding: 10px 0 10px 0;}
+.close {display: block; font-size: 30px; color: #333333; background-color: #00B386; text-align: center;}
+
+#popup_bg {visibility: hidden;}
+#popup_bg:target {visibility: visible;}
